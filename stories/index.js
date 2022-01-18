@@ -1,11 +1,9 @@
 import React from "react";
-
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-
 import "index.scss";
-
 import Button from "components/Button";
+import DayListItem from "components/DayListItem"
 
 storiesOf("Button", module)
   .addParameters({
