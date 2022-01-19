@@ -2,9 +2,11 @@ import React from "react";
 import classNames from "classnames";
 import "components/InterviewerListItem.scss";
 
-function InterviewerListItem(props) {
-  {/*link with classes*/}
-  
+export default function InterviewerListItem(props) {
+  {
+    /*link with classes*/
+  }
+
   let interviewClass = classNames("interviewers__item", {
     "interviewers__item--selected": props.selected,
   });
@@ -12,11 +14,12 @@ function InterviewerListItem(props) {
     "interviewers__item--selected-image": props.selected,
   });
 
-
-  {/*Add an event handler; Render the interviewer's name*/}
+  {
+    /*Add an event handler; Render the interviewer's name*/
+  }
   return (
     <li
-      onClick={() => props.setInterviewer(props.id)}
+      onClick={props.setInterviewer}
       className={interviewClass}
     >
       <img className={interviewerImg} src={props.avatar} alt={props.name} />
@@ -24,5 +27,3 @@ function InterviewerListItem(props) {
     </li>
   );
 }
-
-export default InterviewerListItem;
