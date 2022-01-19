@@ -21,7 +21,7 @@ const days = [
 ];
 
 export default function Application(props) {
-  {/*adding useState to track the day  */}
+  {/* adding useState to track the day  */}
   const [day, setDay] = useState("Monday");
   return (
     <main className="layout">
