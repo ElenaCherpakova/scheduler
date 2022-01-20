@@ -31,12 +31,12 @@ const appointments = [
     time: "1pm",
     interview: {
       student: "Lydia Miller-Jones",
-      interviewer:{
+      interviewer: {
         id: 3,
         name: "Sylvia Palmer",
         avatar: "https://i.imgur.com/LpaY82x.png",
-      }
-    }
+      },
+    },
   },
   {
     id: 3,
@@ -47,21 +47,23 @@ const appointments = [
     time: "3pm",
     interview: {
       student: "Archie Andrews",
-      interviewer:{
+      interviewer: {
         id: 4,
         name: "Cohana Roy",
         avatar: "https://i.imgur.com/FK8V841.jpg",
-      }
-    }
+      },
+    },
   },
   {
     id: 5,
     time: "4pm",
-  }
+  },
 ];
 
 export default function Application(props) {
-  {/* adding useState to track the day  */}
+  {
+    /* adding useState to track the day  */
+  }
   const [day, setDay] = useState("Monday");
   return (
     <main className="layout">
@@ -73,11 +75,7 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          <DayList
-            days={days}
-            value={day}
-            onChange={setDay}
-          />
+          <DayList days={days} value={day} onChange={setDay} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
@@ -86,10 +84,10 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-      {appointments.map((appointment) => (
+        {appointments.map((appointment) => (
           <Appointment key={appointment.id} {...appointment} />
         ))}
-      <Appointment key="last" time="5pm" />
+        <Appointment key="last" time="5pm" />
       </section>
     </main>
   );
