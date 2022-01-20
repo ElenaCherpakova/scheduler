@@ -163,7 +163,7 @@ storiesOf("Appointment", module)
       onClose={action("onClose")}
     />
   ))
-  .add("Edit", () => (
+  .add("Form-Edit", () => (
     <Form
       student="Lydia Miller-Jones"
       interviewer={0}
@@ -172,7 +172,7 @@ storiesOf("Appointment", module)
       onCancel={action("onCancel")}
     />
   ))
-  .add("Create", () => (
+  .add("Form-Create", () => (
     <Form
       interviewers={interviewers}
       onSave={action("onSave")}
@@ -182,6 +182,17 @@ storiesOf("Appointment", module)
   .add("Appointment Empty", () => (
     <Fragment>
       <Appointment id={1} time="4pm" />
+      <Appointment time="5pm" />
+    </Fragment>
+  ))
+
+  .add("Appointment Booked", () => (
+    <Fragment>
+      <Appointment
+        id={1}
+        time="4pm"
+        interview={{ student: "Lydia Miller-Jones", interviewer }}
+      />
       <Appointment time="5pm" />
     </Fragment>
   ))
