@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import "components/DayListItem.scss";
 
-{/* function that format the props.spots for passing test*/}
+/* function that format the props.spots for passing test*/
 const formatSpots = (spots) => {
   if (!spots) {
     return `no spots remaining`;
@@ -14,7 +14,7 @@ const formatSpots = (spots) => {
 };
 
 export default function DayListItem(props) {
-  {/* reformating spots */}
+  /* reformating spots */
   const spotsReformating = formatSpots(props.spots);
   let dayClass = classNames(
     "day-list__item",

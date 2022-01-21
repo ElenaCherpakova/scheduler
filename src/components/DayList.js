@@ -1,10 +1,10 @@
 import React from "react";
 import DayListItem from "components/DayListItem";
 
-{
-  /*create the list of <DayListItem> components */
-}
+
+
 export default function DayList(props) {
+  /*create the list of <DayListItem> components */
   const { days } = props;
   const parsedDay = days.map((day) => {
     return (
