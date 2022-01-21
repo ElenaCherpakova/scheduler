@@ -1,4 +1,4 @@
-export function getAppointmentsForDay(state, day) {
+export default function getAppointmentsForDay(state, day) {
   //there are no appointments on the given day, our days data will be empty.
 
   let filteredDay = state.days.filter((d) => d.name === day)[0];
