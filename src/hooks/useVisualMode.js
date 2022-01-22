@@ -1,6 +1,6 @@
 import { useState } from "react";
-//unit testing to build a custom Hook that allows us to manage the visual mode of any component. 
-export default function useVisualMode(initial) {
+//unit testing to build a custom Hook that allows us to manage the visual mode of any component.
+export default function useVisualMode(initial, replace) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
 
@@ -15,7 +15,7 @@ export default function useVisualMode(initial) {
 
   function back() {
     let newHistory = [...history];
-    newHistory.pop(); 
+    newHistory.pop();
     setHistory(newHistory);
     setMode(newHistory[newHistory.length - 1]);
   }
