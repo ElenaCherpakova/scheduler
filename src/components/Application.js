@@ -15,12 +15,11 @@ export default function Application(props) {
   });
 
   /*Displaying Appointments*/
- 
-  const appointments = getAppointmentsForDay(state, state.day);
 
+  const appointments = getAppointmentsForDay(state, state.day);
   const schedule = appointments.map((appointment) => {
-    const interview = getInterview(state, appointment.interview);
-  
+  const interview = getInterview(state, appointment.interview);
+
     return (
       <Appointment
         key={appointment.id}
@@ -46,7 +45,6 @@ export default function Application(props) {
           appointments: all[1].data,
           interviewers: all[2].data,
         }));
-        
       })
       .catch((err) => console.log(err.message));
   }, []);
