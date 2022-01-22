@@ -1,6 +1,7 @@
 //Helper Functions:
 //gets the appointments for a given day;
 function getAppointmentsForDay(state, day) {
+
   let filteredDay = state.days.filter((d) => d.name === day)[0];
   if (!filteredDay) {
     return [];
@@ -30,4 +31,17 @@ function getInterview(state, interview) {
   return result;
 }
 
-export { getAppointmentsForDay, getInterview };
+function getInterviewersForDay(state, day) {
+  let filteredDay = state.days.filter((d) => d.name === day)[0];
+  if (!filteredDay) {
+    return [];
+  }
+  let result = [];
+  if (filteredDay.appointments.length > 0) {
+    for (let id of filteredDay.interviewers)
+      result.push(state.interviewers[id]);
+  }
+  return result;
+}
+
+export { getAppointmentsForDay, getInterview, getInterviewersForDay };
