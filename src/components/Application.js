@@ -42,7 +42,22 @@ export default function Application(props) {
       .catch((error) => console.log(error));
   }
 
-  function cancelInterview 
+  function cancelInterview (id, interview) {
+    console.log(id, interview);
+    const appointment = {
+      ...state.appointments[id],
+      interview: null,
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment,
+    };
+    setState({
+      ...state,
+      appointments,
+    });
+  }
+  
   /*Displaying Appointments*/
 
   const appointments = getAppointmentsForDay(state, state.day);
@@ -58,6 +73,7 @@ export default function Application(props) {
         interview={interview}
         interviewers={interviewers}
         bookInterview={bookInterview}
+        cancelInterview = {cancelInterview}
       />
     );
   });
