@@ -58,14 +58,13 @@ export default function Application(props) {
     });
 
     return axios
-    .delete(`/api/appointments/${id}`)
-    .then((response) => {
-      console.log(response);
-      setState((prevState) => ({ ...prevState, appointments }));
-    })
-    .catch((error) => console.log(error));
-}
-
+      .delete(`/api/appointments/${id}`)
+      .then((response) => {
+        console.log(response);
+        setState((prevState) => ({ ...prevState, appointments }));
+      })
+      .catch((error) => console.log(error));
+  }
 
   /*Displaying Appointments*/
 
@@ -127,7 +126,7 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {schedule}
-        <Appointment key="last" time="5pm" bookInterview={bookInterview}   cancelInterview={cancelInterview} />
+        <Appointment key="last" time="5pm" />
       </section>
     </main>
   );
