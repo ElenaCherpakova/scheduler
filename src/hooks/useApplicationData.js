@@ -11,6 +11,21 @@ export default function useApplicationData() {
 
   const setDay = (day) => setState({ ...state, day });
 
+  function updateSpots(requestType) {
+    const days = state.days.map((day) => {
+      if (day.name === state.day) {
+        if (requestType === "bookAppointment") {
+          return { ...day, spots: day.spots - 1 };
+        } else {
+          return { ...day, spots: day.spots + 1 };
+        }
+      } else {
+        return { ...day };
+      }
+    });
+    return days;
+  }
+
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -25,12 +40,13 @@ export default function useApplicationData() {
       .put(`/api/appointments/${id}`, appointment)
       .then((response) => {
         console.log(response);
-        setState((prevState) => ({ ...prevState, appointments }));
+        const days = updateSpots("bookAppointment");
+        setState((prevState) => ({ ...prevState, appointments, days }));
       })
       .catch((error) => console.log(error));
   }
 
-  function cancelInterview(id, interview) {
+  function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
       interview: null,
@@ -42,7 +58,8 @@ export default function useApplicationData() {
 
     return axios.delete(`/api/appointments/${id}`).then((response) => {
       console.log(response);
-      setState((prevState) => ({ ...prevState, appointments }));
+      const days = updateSpots();
+      setState((prevState) => ({ ...prevState, appointments, days }));
     });
   }
 
