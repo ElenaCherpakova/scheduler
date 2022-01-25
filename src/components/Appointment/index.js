@@ -6,7 +6,7 @@ import Empty from "./Empty";
 import Show from "./Show";
 import Status from "./Status";
 import Confirm from "./Confirm";
-import Error from "./Confirm";
+import Error from "./Error";
 import Form from "./Form";
 
 //hook helper
@@ -20,6 +20,7 @@ const DELETING = "DELETING";
 const CONFIRM = "CONFIRM";
 const EDIT = "EDIT";
 const ERROR_DELETE = "ERROR_DELETE";
+const ERROR_SAVE = "ERROR_SAVE";
 
 export default function Appointment(props) {
   const { id, time, interview, interviewers, bookInterview, cancelInterview } =
@@ -33,17 +34,18 @@ export default function Appointment(props) {
       student: name,
       interviewer,
     };
-    transition(SAVING);
+    transition(SAVING, true);
 
-    bookInterview(id, interview).then(() => transition(SHOW));
+    bookInterview(id, interview)
+      .then(() => transition(SHOW))
+      .catch(() => transition(ERROR_SAVE, true));
   }
 
   function deleteAppointment() {
     transition(DELETING, true);
-    cancelInterview(id).then((res) => {
-      console.log("res", res);
-      transition(EMPTY);
-    });
+    cancelInterview(id)
+      .then(() => transition(EMPTY))
+      .catch(() => transition(ERROR_DELETE, true));
   }
 
   return (
@@ -53,11 +55,7 @@ export default function Appointment(props) {
         <Empty onAdd={() => transition(CREATE)} bookInterview={bookInterview} />
       )}
       {mode === CREATE && (
-        <Form
-          interviewers={interviewers}
-          onCancel={() => back(EMPTY)}
-          onSave={save}
-        />
+        <Form interviewers={interviewers} onCancel={back} onSave={save} />
       )}
       {mode === SHOW && (
         <Show
@@ -87,6 +85,9 @@ export default function Appointment(props) {
         />
       )}
       {mode === ERROR_DELETE && (
+        <Error message={"Oops something went wrong"} onClose={back} />
+      )}
+      {mode === ERROR_SAVE && (
         <Error message={"Oops something went wrong"} onClose={back} />
       )}
     </article>

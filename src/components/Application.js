@@ -28,10 +28,10 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment,
     };
-    setState({
+    /*setState({
       ...state,
       appointments,
-    });
+    });*/
 
     return axios
       .put(`/api/appointments/${id}`, appointment)
@@ -52,18 +52,11 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment,
     };
-    setState({
-      ...state,
-      appointments,
-    });
 
-    return axios
-      .delete(`/api/appointments/${id}`)
-      .then((response) => {
-        console.log(response);
-        setState((prevState) => ({ ...prevState, appointments }));
-      })
-      .catch((error) => console.log(error));
+    return axios.delete(`/api/appointments/${id}`).then((response) => {
+      console.log(response);
+      setState((prevState) => ({ ...prevState, appointments }));
+    });
   }
 
   /*Displaying Appointments*/
@@ -82,6 +75,7 @@ export default function Application(props) {
         interviewers={interviewers}
         bookInterview={bookInterview}
         cancelInterview={cancelInterview}
+      
       />
     );
   });
