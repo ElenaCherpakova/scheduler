@@ -29,8 +29,12 @@ export default function useApplicationData() {
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
-      interview: { ...interview },
     };
+
+    const editing = appointment.interview;
+    appointment.interview = { ...interview };
+    let days = [...state.days];
+
     const appointments = {
       ...state.appointments,
       [id]: appointment,
@@ -40,7 +44,11 @@ export default function useApplicationData() {
       .put(`/api/appointments/${id}`, appointment)
       .then((response) => {
         console.log(response);
-        const days = updateSpots("bookAppointment");
+
+        if (!editing) {
+          days = updateSpots("bookAppointment");
+        }
+
         setState((prevState) => ({ ...prevState, appointments, days }));
       })
       .catch((error) => console.log(error));
