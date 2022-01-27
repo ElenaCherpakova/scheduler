@@ -30,7 +30,7 @@ function getInterview(state, interview) {
   }
   return result;
 }
-
+//getting interviews for day 
 function getInterviewersForDay(state, day) {
   let filteredDay = state.days.filter((d) => d.name === day)[0];
   if (!filteredDay) {

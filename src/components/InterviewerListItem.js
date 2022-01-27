@@ -12,7 +12,7 @@ export default function InterviewerListItem(props) {
     "interviewers__item--selected-image": props.selected,
   });
 
-  /*Add an event handler; Render the interviewer's name*/
+  // Add an event handler; Render the interviewer's name
 
   return (
     <li onClick={props.setInterviewer} className={interviewClass}>

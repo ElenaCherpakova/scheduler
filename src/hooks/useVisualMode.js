@@ -12,7 +12,7 @@ export default function useVisualMode(initial, replace) {
     setHistory(newHistory);
     setMode(current);
   }
-
+//return to the previous page
   function back() {
     let newHistory = [...history];
     newHistory.pop();
