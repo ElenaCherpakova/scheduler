@@ -5,6 +5,7 @@ Data is persisted by the API server using a PostgreSQL database.It uses jest and
 
 !['Front-end"](src/docs/scheduler.gif)
 !['appoitnments'](src/docs/appointments.png)
+!['fully booked day'](src/docs/booked-appointments.png)
 
 ## Getting Started
 
