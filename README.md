@@ -9,7 +9,9 @@ Data is persisted by the API server using a PostgreSQL database.It uses jest and
 
 !['delete-appointment'](src/docs/delete-appoitment.png)
 
-!['save-appointment'] (src/docs/save-appointment.png)
+!['save-appointment'](src/docs/save-appointment.png)
+
+!['scheduling-appointment'](src/docs/scheduling-appointment.png)
 
 
 
