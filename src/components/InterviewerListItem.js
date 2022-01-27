@@ -5,10 +5,10 @@ import "components/InterviewerListItem.scss";
 export default function InterviewerListItem(props) {
   /*link with classes*/
 
-  let interviewClass = classNames("interviewers__item", {
+  const interviewClass = classNames("interviewers__item", {
     "interviewers__item--selected": props.selected,
   });
-  let interviewerImg = classNames("interviewers__item-image", {
+  const interviewerImg = classNames("interviewers__item-image", {
     "interviewers__item--selected-image": props.selected,
   });
 
