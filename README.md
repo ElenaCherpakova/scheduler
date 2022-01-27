@@ -2,7 +2,7 @@
 
 Interview Scheduler is a single page application (SPA), built using React.
 
-!['Front-end"](photos/scheduler.gif)
+!['Front-end"](src/photos/scheduler.gif)
 ## Getting Started
 
 1. Clone the repository onto your local device.
