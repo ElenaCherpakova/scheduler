@@ -9,6 +9,10 @@ Data is persisted by the API server using a PostgreSQL database.It uses jest and
 
 !['delete-appointment'](src/docs/delete-appoitment.png)
 
+!['save-appointment'] (src/docs/save-appointment.png)
+
+
+
 ## Getting Started
 
 1. Clone the repository onto your local device.
