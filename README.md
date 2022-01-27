@@ -27,7 +27,7 @@ Data is persisted by the API server using a PostgreSQL database.It uses jest and
 1. Clone the repository onto your local device.
 2. Install dependencies using the `npm install` command.
 3. Start the web server using the `npm start` command.
-   The app will be served at <http://localhost:8080/>.
+   The app will be served at <http://localhost:8080/>
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
