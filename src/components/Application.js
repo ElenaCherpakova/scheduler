@@ -5,7 +5,7 @@ import DayList from "components/DayList";
 import Appointment from "components/Appointment";
 //Hook
 import useApplicationData from "hooks/useApplicationData";
-//Helper functions
+//Import Helper functions
 import {
   getAppointmentsForDay,
   getInterview,

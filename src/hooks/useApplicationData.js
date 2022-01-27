@@ -10,7 +10,7 @@ export default function useApplicationData() {
   });
 
   const setDay = (day) => setState((prevState) => ({ ...prevState, day }));
-
+  // const setDay = (day) => setState({ ...state, day });
   //spots remaining functionality. When we add or remove an appointment,update the number of spots remaining that day.
   function updateSpots(requestType) {
     const days = state.days.map((day) => {

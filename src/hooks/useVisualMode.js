@@ -1,18 +1,18 @@
 import { useState } from "react";
 //unit testing to build a custom Hook that allows us to manage the visual mode of any component.
-export default function useVisualMode(initial, replace) {
+export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
 
   //transition to a new mode
-  function transition(current, replace=false) {
+  function transition(current, replace) {
     replace && back();
     let newHistory = [...history];
     newHistory.push(current);
     setHistory(newHistory);
     setMode(current);
   }
-//return to the previous page
+  //return to the previous page
   function back() {
     let newHistory = [...history];
     newHistory.pop();

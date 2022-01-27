@@ -57,7 +57,7 @@ export default function Appointment(props) {
       {mode === CREATE && (
         <Form interviewers={interviewers} onCancel={back} onSave={save} />
       )}
-      {mode === SHOW && interview.interviewer && (
+      {mode === SHOW && (
         <Show
           student={interview.student}
           interviewer={interview.interviewer}
@@ -83,6 +83,7 @@ export default function Appointment(props) {
           onSave={save}
         />
       )}
+
       {mode === ERROR_DELETE && (
         <Error message={"Oops something went wrong"} onClose={back} />
       )}
