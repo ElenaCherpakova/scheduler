@@ -10,7 +10,7 @@ export default function useApplicationData() {
   });
 
   const setDay = (day) => setState((prevState) => ({ ...prevState, day }));
-  // const setDay = (day) => setState({ ...state, day });
+
   //spots remaining functionality. When we add or remove an appointment,update the number of spots remaining that day.
   function updateSpots(requestType) {
     const days = state.days.map((day) => {
@@ -26,7 +26,7 @@ export default function useApplicationData() {
     });
     return days;
   }
-
+  // Adding new interview
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -54,7 +54,7 @@ export default function useApplicationData() {
       })
       .catch((error) => console.log(error));
   }
-
+  //deleting interview and updating database
   function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
