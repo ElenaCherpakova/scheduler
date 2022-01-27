@@ -3,6 +3,7 @@
 Interview Scheduler is a single page application (SPA), built using React.
 
 !['Front-end"](src/photos/scheduler.gif)
+
 ## Getting Started
 
 1. Clone the repository onto your local device.
@@ -13,12 +14,18 @@ Interview Scheduler is a single page application (SPA), built using React.
 
 ## Dependencies
 
-- Axios
-- Classnames
-- Normalize.css
-- React
-- React-dom
-- React-scripts
+- axios
+- @testing-library/react-hooks
+- react
+- react-dom
+- react-scripts
+- react-test-renderer
+- node-sass
+- storybook
+- babel
+- classnames
+- eslint-plugin-cypress
+- normalize.css
 
 ## Running Webpack Development Server
 
