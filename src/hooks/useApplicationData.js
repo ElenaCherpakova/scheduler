@@ -26,7 +26,7 @@ export default function useApplicationData() {
     });
     return days;
   }
-  // Adding new interview
+  // Adding a new interview and sending request to the server
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -54,7 +54,7 @@ export default function useApplicationData() {
       })
       .catch((error) => console.log(error));
   }
-  //deleting interview and updating database
+  //deleting interview and sending request to the server
   function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
