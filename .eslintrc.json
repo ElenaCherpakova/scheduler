@@ -1,4 +1,4 @@
 {
-  "extends": "react-app",
+  "extends": ["react-app", "plugin:cypress/recommended"],
   "parser": "babel-eslint"
 }

@@ -21,13 +21,13 @@ export default function Form(props) {
 
   const validate = () => {
     if (student === "") {
-      setError("Student name cannot be blank");
+      setError("Student name cannot be blank")
       return;
     }
-    if (interviewer === null) {
+    /*if (interviewer === null) {
       setError("An interviewer must be selected");
       return;
-    }
+    }*/
     setError("");
     props.onSave(student, interviewer);
   };
@@ -38,7 +38,7 @@ export default function Form(props) {
         <form autoComplete="off" onSubmit={(e) => e.preventDefault()}>
           <input
             className="appointment__create-input text--semi-bold"
-            name={props.student}
+            name="name"
             type="text"
             placeholder="Enter Student Name"
             value={student}

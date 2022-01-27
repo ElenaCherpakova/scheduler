@@ -1,8 +1,11 @@
 import React from "react";
+//Components
 import "components/Application.scss";
 import DayList from "components/DayList";
 import Appointment from "components/Appointment";
+//Hook
 import useApplicationData from "hooks/useApplicationData";
+//Helper functions
 import {
   getAppointmentsForDay,
   getInterview,

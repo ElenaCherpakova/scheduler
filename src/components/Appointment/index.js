@@ -57,11 +57,10 @@ export default function Appointment(props) {
       {mode === CREATE && (
         <Form interviewers={interviewers} onCancel={back} onSave={save} />
       )}
-      {mode === SHOW && (
+      {mode === SHOW && interview.interviewer && (
         <Show
           student={interview.student}
           interviewer={interview.interviewer}
-          bookInterview={bookInterview}
           onDelete={() => transition(CONFIRM)}
           onEdit={() => transition(EDIT)}
         />
