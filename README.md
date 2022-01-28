@@ -21,13 +21,6 @@ Data is persisted by the API server using a PostgreSQL database. It uses jest an
 
 !['delete-appointment'](src/docs/delete-appoitment.png)
 
-<<<<<<< HEAD
-!['Front-end"](src/photos/scheduler.gif)
-!['Front-end"](src/photos/appointments.png)
-
-=======
->>>>>>> 02686492551e438d3cea1c2196a9dc1e7c5d2273
-
 ## Getting Started
 
 1. Clone the repository onto your local device.
