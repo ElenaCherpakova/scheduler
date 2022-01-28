@@ -4,6 +4,8 @@ Interview Scheduler is a single page application (SPA), built using React.
 Data is persisted by the API server using a PostgreSQL database.It uses jest and cypress testing.
 
 !['Front-end"](src/photos/scheduler.gif)
+!['Front-end"](src/photos/appointments.png)
+
 
 ## Getting Started
 
