@@ -23,21 +23,26 @@ Data is persisted by the API server using a PostgreSQL database. It uses jest an
 
 ## Getting Started
 
-1. Clone the repository onto your local device.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm start` command.
+Instal scheduler:
+
+- Clone the repository onto your local device.
+- Install dependencies using the `npm install` command.
+- Start the web server using the `npm start` command.
    The app will be served at <http://localhost:8080/>
-4. Go to <http://localhost:8080/> in your browser.
+- Go to <http://localhost:8080/> in your browser.
+
+Install scheduler-api from:
+
+- https://github.com/lighthouse-labs/scheduler-api
 
 ## Dependencies
-
+- node v12.22.5 (use this version)
 - axios
 - @testing-library/react-hooks
 - react
-- react-dom
-- react-scripts
 - react-test-renderer
-- node-sass
+- sass
+
 - storybook
 - babel
 - classnames
@@ -60,4 +65,10 @@ npm test
 
 ```sh
 npm run storybook
+```
+
+## Running Cypress Visual Testbed
+
+```sh
+npm run cypress
 ```
