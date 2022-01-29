@@ -86,7 +86,10 @@ export default function Appointment(props) {
       )}
 
       {mode === ERROR_DELETE && (
-        <Error message={"Oops something went wrong"} onClose={back} />
+        <Error
+          message={"Oops something went wrong"}
+          onClose={() => transition(SHOW)}
+        />
       )}
       {mode === ERROR_SAVE && (
         <Error message={"Oops something went wrong"} onClose={back} />
