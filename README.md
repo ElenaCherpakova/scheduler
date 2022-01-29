@@ -17,7 +17,7 @@ Data is persisted by the API server using a PostgreSQL database. It uses jest an
 
 !['fully booked day'](src/docs/booked-appointments.png)
 
-*Delete interivew*
+*Delete interview*
 
 !['delete-appointment'](src/docs/delete-appoitment.png)
 
