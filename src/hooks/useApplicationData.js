@@ -33,7 +33,7 @@ export default function useApplicationData() {
     };
 
     return axios
-      .put(`http://localhost:8001/api/appointments/${id}`, appointment)
+      .put(`/api/appointments/${id}`, appointment)
       .then((response) => {
         console.log(response);
 
