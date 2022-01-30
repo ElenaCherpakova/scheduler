@@ -42,7 +42,6 @@ export default function useApplicationData() {
         }
         setState((prevState) => ({ ...prevState, appointments, days }));
       })
-      .catch((error) => console.log(error));
   }
   //deleting interview and sending request to the server
   function cancelInterview(id) {
